@@ -1,0 +1,58 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "plugin:jest/recommended"
+    ],
+    "plugins": [
+        "prettier",
+        "@typescript-eslint",
+        "jest"
+    ],
+    "env": {
+        "node": true,
+        "es6": true,
+        "jest": true,
+        "jest/globals": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "rules": {
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "ignoreRestSiblings": true
+            }
+        ],
+        "no-console": "off",
+        "prefer-const": [
+            "error",
+            {
+                "destructuring": "all"
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.ts"
+            ],
+            "rules": {
+                "no-console": "off",
+                "@typescript-eslint/no-empty-function": "off"
+            }
+        }
+    ],
+    "ignorePatterns": [
+        "node_modules/",
+        "**/node_modules/",
+        "shared/oauth/"
+    ]
+}

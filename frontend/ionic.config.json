@@ -1,0 +1,7 @@
+{
+  "name": "Amazon Bedrock agent",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,53 @@
+{
+    "openapi": "3.0.0",
+        "info": {
+            "title": "Travel And Tourist Bot API",
+            "version": "1.0.0",
+            "description": "Travel And Tourist APIs for storing itinerary summary in S3 and generating Presigned URL of the itinerary summary. Also Sending the Presigned URL to user's email."
+        },
+        "paths": {
+            "/send-email/{contactEmail}": {
+                "get": {
+                    "summary": "API to send itinerary to the user. Email must have the itinerary context from the chat history.",
+                    "description": "Use this API to send the itinerary to the user's provided email address. You need contactEmail and content of itinerary as parameter for this API.",
+                    "operationId": "sendEmail",
+                    "parameters": [{
+                        "name": "contactEmail",
+                        "in": "path",
+                        "description": "user email address to send the email to.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "itinerary",
+                        "in": "query",
+                        "description": "generated customer itinerary details.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }],
+                    "responses": {
+                        "200": {
+                            "description": "Email has been successfully",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "message": {
+                                                "type": "string",
+                                                "description": "Your Itinerary has been submitted successfully. Place Check your email Inbox."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }    
+    }

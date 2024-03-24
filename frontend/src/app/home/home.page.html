@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Chatbot </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      <img src="../../assets/icon/chat.png" alt="Logo" class="chat-logo" />
+      <h2>Travel & Tourist Chatbot</h2>
+      <p>Here to assist you to plan your next Trip!</p>
+      <button class="refresh-btn" (click)="resetTheSession()">
+        <img src="../../assets/icon/refresh.png" />
+      </button>
+    </div>
+    <div class="chat-box" #chatBox id="chat-box">
+      <div *ngFor="let message of messages; let i = index">
+        <!-- Message container -->
+        <div
+          class="message-container"
+          [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}"
+        >
+          <div class="chat-message">
+            <div
+              class="message-content"
+              [ngClass]="{'user-message-content': message.sender === 'user', 'bot-message-content': message.sender === 'bot'}"
+            >
+              {{ message.content }}
+            </div>
+          </div>
+          <!-- Loading indicator for the last user message -->
+          <div *ngIf="isLoading && i === messages.length - 1 && message.sender === 'user'" class="loading-indicator">
+            <img src="../../assets/icon/loading.gif" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="user-input">
+      <textarea #userInput placeholder="Type your message..." (keyup.enter)="sendMessage(userInput)"></textarea>
+      <button (click)="sendMessage(userInput)">Send</button>
+    </div>
+  </div>
+</ion-content>

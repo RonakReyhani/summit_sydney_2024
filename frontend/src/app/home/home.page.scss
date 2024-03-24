@@ -1,0 +1,199 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 600px; /* Fixed height for the entire chatbot container */
+  width: 95%;
+  max-width: 400px; /* Maximum width for larger screens */
+  border: 2px solid #5d5fef; /* Solid border with a color accent */
+  border-radius: 10px; /* Rounded corners for modern look */
+  overflow: hidden;
+  margin: auto; /* Center the chatbot on the page */
+  margin-top: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background: #fff; /* Background color for the chat container */
+}
+
+.chat-header {
+  position: relative; /* Relative positioning to allow absolute positioning inside */
+  background-color: #5d5fef;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: left;
+  padding-left: 67px;
+}
+
+.chat-header h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+}
+
+.chat-header p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.refresh-btn {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  /* Additional styling for the button */
+}
+
+.chat-logo {
+  position: absolute; 
+  top: 15px; 
+  left: 15px; 
+  height: 40px; 
+  width: auto; 
+}
+
+.chat-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f2f4f8;
+}
+
+.chat-message {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.chat-message .message-content {
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 18px;
+  position: relative;
+}
+
+.user .message-content {
+  background-color: #e5e3ef;
+  align-self: flex-end;
+}
+
+.bot .message-content {
+  background-color: #fefefe;
+  align-self: flex-start;
+}
+
+.message-meta {
+  font-size: 0.75em;
+  color: #999;
+  margin-top: 8px;
+}
+
+.user-input {
+  display: flex;
+  background: #fff;
+  padding: 10px;
+}
+
+.user-input textarea {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  padding: 10px;
+  resize: none;
+  outline: none;
+  margin-right: 10px;
+}
+
+.user-input button {
+  background-color: #5d5fef;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.user-input button:hover {
+  background-color: #4b4bc9;
+}
+
+.user-message {
+  text-align: right;
+}
+
+.bot-message {
+  text-align: left;
+}
+
+.message-content {
+  max-width: 80%; /* Limit message width */
+  word-wrap: break-word; /* Ensure long words do not overflow */
+}
+
+.user-message-content {
+  background-color: #e5e3ee; /* User message background color */
+  color: #7a72de; /* User message text color */
+  border-radius: 15px;
+  padding: 8px 12px;
+  display: inline-block;
+  margin-left: auto; /* Align user messages to the right */
+  text-align: left;
+}
+
+.bot-message-content {
+  background-color: #fefefe; /* Bot message background color - Tomato for example */
+  color: #636365; /* Bot message text color */
+  border-radius: 15px;
+  padding: 8px 12px;
+  border: 1px solid #636365;
+  display: inline-block;
+  margin-right: auto; /* Align bot messages to the left */
+  text-align: left;
+}
+
+.user-input {
+  display: flex;
+  padding: 10px;
+  align-items: center; /* Ensures vertical alignment of the elements */
+}
+
+.user-input textarea {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  resize: none; /* Prevents resizing of the textarea */
+  overflow: auto; /* Allows scrolling inside the textarea if the text exceeds its height */
+  margin-right: 10px; /* Space between textarea and send button */
+}
+
+.user-input button {
+  padding: 10px 15px; /* Adjusted padding for better click area */
+  border: none;
+  border-radius: 20px; /* Consistent rounded corners with the input field */
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth background color transition on hover */
+}
+
+.user-input button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc; /* Light gray */
+  cursor: not-allowed; /* Show a 'not-allowed' cursor on hover */
+}
+
+.loading-indicator {
+  text-align: left;
+  margin-top: 10px;
+  color: #999; /* Styling for the loading text */
+  /* Ensure the loading indicator takes full width to center the text */
+  width: 100%;
+}
