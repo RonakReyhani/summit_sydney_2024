@@ -18,9 +18,5 @@ npm run deploy
 ## Architecture diagram
 
 ![alt text](./diagram.png)
-## Demonstration
-
-<video src='./Chatbot-ui-wih-logs.mp4' width=400/>
-
 
 
